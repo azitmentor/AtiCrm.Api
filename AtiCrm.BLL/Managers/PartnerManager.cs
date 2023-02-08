@@ -19,6 +19,11 @@ namespace AtiCrm.BLL.Managers
             _dataprovider = dataprovider;
         }
 
+        public IEnumerable<t_partner_event> GetPartnerEvents(int partnerId)
+        {
+            return _dataprovider.GetPartnerEvents(partnerId);
+        }
+
         public IEnumerable<t_partner> GetPartnerList()
         {
             return _dataprovider.GetPartnerData();

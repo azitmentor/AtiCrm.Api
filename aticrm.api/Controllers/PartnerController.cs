@@ -23,5 +23,11 @@ namespace aticrm.api.Controllers
         {
             return _manager.GetPartnerList();
         }
+
+        [HttpGet("events/{id}")]
+        public IEnumerable<t_partner_event> GetPartnerEvents(int id)
+        {
+            return _manager.GetPartnerEvents(id);
+        }
     }
 }

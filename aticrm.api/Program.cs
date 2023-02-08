@@ -17,6 +17,16 @@ namespace AtiCrm.Api
             builder.Services.AddSwaggerGen();
             builder.Services.AddDbContext<CrmDbContext>(o => o.UseSqlServer("server=.;database=aticrm;trusted_connection=yes"));
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy(name: "CORS",
+                                  policy =>
+                                  {
+                                      policy.WithOrigins("http://localhost:4200");
+                                  });
+            });
+
+
             AtiCrm.BLL.DepencyRegister.Register(builder.Services);
             AtiCrm.Datalayer.DepencyRegister.Register(builder.Services);
 
@@ -28,6 +38,8 @@ namespace AtiCrm.Api
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseCors("CORS");
 
             app.UseAuthorization();
 

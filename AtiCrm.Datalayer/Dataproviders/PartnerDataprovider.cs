@@ -21,5 +21,10 @@ namespace AtiCrm.Datalayer.Dataproviders
         {
             return _context.t_partner.ToList();
         }
+
+        public IEnumerable<t_partner_event> GetPartnerEvents(int partnerid)
+        {
+            return _context.t_partner_event.Where(p => p.t_partner.id == partnerid);
+        }
     }
 }

@@ -10,5 +10,6 @@ namespace AtiCrm.Datalayer.Interfaces
     public interface IPartnerDataprovider
     {
         IEnumerable<t_partner> GetPartnerData();
+        IEnumerable<t_partner_event> GetPartnerEvents(int partnerid);
     }
 }

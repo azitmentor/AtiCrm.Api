@@ -10,5 +10,7 @@ namespace AtiCrm.BLL.Interfaces
     public interface IPartnerManager
     {
         IEnumerable<t_partner> GetPartnerList();
+
+        IEnumerable<t_partner_event> GetPartnerEvents(int partnerId);
     }
 }
