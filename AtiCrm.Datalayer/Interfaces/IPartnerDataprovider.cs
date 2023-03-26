@@ -11,5 +11,7 @@ namespace AtiCrm.Datalayer.Interfaces
     {
         IEnumerable<t_partner> GetPartnerData();
         IEnumerable<t_partner_event> GetPartnerEvents(int partnerid);
+        bool Save(t_partner partner);
+        t_partner GetPartner(int partnerid);
     }
 }

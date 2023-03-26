@@ -23,6 +23,7 @@ namespace AtiCrm.Api
                                   policy =>
                                   {
                                       policy.WithOrigins("http://localhost:4200");
+                                      policy.WithHeaders("Content-type");
                                   });
             });
 

@@ -19,6 +19,15 @@ namespace AtiCrm.BLL.Managers
             _dataprovider = dataprovider;
         }
 
+        public t_partner GetPartner(int partnerid)
+        {
+            if (partnerid == 0)
+            {
+                return new t_partner();
+            }
+            return _dataprovider.GetPartner(partnerid);
+        }
+
         public IEnumerable<t_partner_event> GetPartnerEvents(int partnerId)
         {
             return _dataprovider.GetPartnerEvents(partnerId);
@@ -27,6 +36,11 @@ namespace AtiCrm.BLL.Managers
         public IEnumerable<t_partner> GetPartnerList()
         {
             return _dataprovider.GetPartnerData();
+        }
+
+        public bool Save(t_partner partner)
+        {
+            return _dataprovider.Save(partner);
         }
     }
 }
